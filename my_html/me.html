@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Echoes of a Broken Heart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;1,400&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0f23, #000000);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Crimson Text', serif;
+      position: relative;
+      animation: backgroundFade 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes backgroundFade {
+      0% { background: radial-gradient(circle at center, #0f0f23 0%, #000000 100%); }
+      100% { background: radial-gradient(circle at center, #0d0d1a 0%, #05050f 100%); }
+    }
+
+    .stars, .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .stars div,
+    .particles div {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .stars div {
+      width: 2px;
+      height: 2px;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .particles div {
+      width: 2px;
+      height: 20px;
+      background: rgba(135, 206, 250, 0.2);
+      animation: fall 8s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { top: -20px; opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { top: 100vh; opacity: 0; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 30px rgba(173, 216, 230, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 50px;
+      width: 90%;
+      max-width: 700px;
+      color: #e6e6f0;
+      text-align: center;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+      position: relative;
+    }
+
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.01); }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #ff6b8a;
+      text-shadow: 0 0 15px rgba(255, 107, 138, 0.4);
+      margin-bottom: 20px;
+      animation: glowTitle 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowTitle {
+      from { text-shadow: 0 0 5px rgba(255, 107, 138, 0.2); }
+      to { text-shadow: 0 0 20px rgba(255, 107, 138, 0.5); }
+    }
+
+    .message {
+      font-size: 20px;
+      font-style: italic;
+      color: #ccccdd;
+      line-height: 1.8;
+      animation: fadeInText 5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInText {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+    }
+
+    .broken-heart {
+      font-size: 64px;
+      color: #ff6b8a;
+      animation: throb 2.5s infinite ease-in-out;
+    }
+
+    @keyframes throb {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #999;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      .message { font-size: 18px; }
+      .card { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars">
+    <div style="top: 10%; left: 20%;"></div>
+    <div style="top: 30%; left: 70%;"></div>
+    <div style="top: 50%; left: 10%;"></div>
+    <div style="top: 80%; left: 50%;"></div>
+  </div>
+
+  <div class="particles">
+    <div style="left: 15%; animation-delay: 0s;"></div>
+    <div style="left: 35%; animation-delay: 2s;"></div>
+    <div style="left: 55%; animation-delay: 4s;"></div>
+    <div style="left: 75%; animation-delay: 1s;"></div>
+    <div style="left: 90%; animation-delay: 3s;"></div>
+  </div>
+
+  <div class="card">
+    <div class="broken-heart">💔</div>
+    <h1>Echoes of a Broken Heart</h1>
+    <div class="message">
+      When the silence screams louder than the words,<br />
+      And memories replay like ghosts in the dark,<br />
+      Know this: even shattered hearts still beat.<br /><br />
+      You were the poem I never finished,<br />
+      The song that still echoes through my soul.<br />
+      <span class="highlight">And I miss you...</span>
+    </div>
+    <div class="signature">– Jack Donwell</div>
+  </div>
+
+</body>
+</html>
